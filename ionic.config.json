@@ -1,0 +1,7 @@
+{
+  "name": "AlbumFig",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
