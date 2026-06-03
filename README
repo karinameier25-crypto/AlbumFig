@@ -1,0 +1,94 @@
+# 📖 Álbum de Figurinhas da Copa
+
+## 👥 Integrantes
+
+- Karina Meier
+- (Nome dos outros integrantes)
+
+## 📌 Descrição
+
+Este projeto consiste em um aplicativo de álbum de figurinhas da Copa do Mundo desenvolvido com Ionic Vue.
+
+O sistema permite que o usuário:
+
+- Realize cadastro e login;
+- Visualize figurinhas de jogadores;
+- Marque figurinhas como coletadas;
+- Visualize uma lista apenas com as figurinhas coletadas;
+- Acesse a página de perfil.
+
+## ⚙️ Tecnologias Utilizadas
+
+- Vue 3
+- Ionic Framework
+- TypeScript
+- Vue Router
+
+## 🏆 Funcionalidades
+
+### Login
+Permite que o usuário entre no sistema utilizando e-mail e senha cadastrados.
+
+### Cadastro
+Permite criar uma nova conta.
+
+### Recuperação de Senha
+Tela para recuperação de senha.
+
+### Álbum
+Exibe as figurinhas dos jogadores das seleções do Brasil e Japão.
+
+### Figurinhas Coletadas
+Mostra apenas as figurinhas marcadas como coletadas.
+
+### Perfil
+Exibe informações do usuário e opção de sair da conta.
+
+## 📂 Estrutura do Projeto
+
+```txt
+src/
+├── assets/
+├── components/
+│   └── StickerCard.vue
+├── composables/
+│   ├── useAlbum.ts
+│   └── useAuth.ts
+├── data/
+│   └── stickers.ts
+├── views/
+│   ├── LoginPage.vue
+│   ├── RegisterPage.vue
+│   ├── ResetPasswordPage.vue
+│   ├── HomePage.vue
+│   ├── CardsColetados.vue
+│   ├── PerfilPessoal.vue
+│   └── TabsPage.vue
+└── router/
+    └── index.ts
+```
+
+## 🚀 Como Executar o projeto:
+
+```bash
+ionic serve
+```
+
+3. Abrir no navegador:
+
+```txt
+http://localhost:8100
+```
+
+## 📸 Telas do Sistema
+
+- Login
+- Cadastro
+- Recuperação de Senha
+- Álbum de Figurinhas
+- Figurinhas Coletadas
+- Perfil
+
+## 📝 Observações
+
+Este projeto foi desenvolvido para fins educacionais, com o objetivo de praticar conceitos de desenvolvimento mobile utilizando Ionic Vue.
