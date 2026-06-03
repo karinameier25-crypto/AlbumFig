@@ -11,12 +11,14 @@
     <ion-content class="ion-padding">
 
       <ion-input
+        v-model="nome"
         label="Nome"
       ></ion-input>
 
       <br>
 
       <ion-input
+        v-model="email"
         label="Email"
         type="email"
       ></ion-input>
@@ -24,6 +26,7 @@
       <br>
 
       <ion-input
+        v-model="senha"
         label="Senha"
         type="password"
       ></ion-input>
@@ -32,7 +35,7 @@
 
       <ion-button
         expand="block"
-        @click="cadastrar"
+        @click="realizarCadastro"
       >
         Cadastrar
       </ion-button>
@@ -54,12 +57,28 @@ import {
   IonButton
 } from '@ionic/vue';
 
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useAuth } from '@/composables/useAuth';
 
 const router = useRouter();
 
-function cadastrar() {
+const nome = ref('');
+const email = ref('');
+const senha = ref('');
+
+const { cadastrar } = useAuth();
+
+function realizarCadastro() {
+
+  cadastrar(
+    nome.value,
+    email.value,
+    senha.value
+  );
+
   alert('Cadastro realizado com sucesso!');
+
   router.push('/login');
 }
 </script>
