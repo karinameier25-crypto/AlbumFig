@@ -1,31 +1,55 @@
-import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/TabsPage.vue'
+import { createRouter, createWebHistory } from '@ionic/vue-router'
 
-const routes: Array<RouteRecordRaw> = [
+import LoginPage from '@/views/LoginPage.vue'
+import RegisterPage from '@/views/RegisterPage.vue'
+import ResetPasswordPage from '@/views/ResetPasswordPage.vue'
+
+import TabsPage from '@/views/TabsPage.vue'
+
+import HomePage from '@/views/HomePage.vue'
+import CardsColetados from '@/views/CardsColetados.vue'
+import PerfilPessoal from '@/views/PerfilPessoal.vue'
+
+const routes = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/login'
   },
+
   {
-    path: '/tabs/',
+    path: '/login',
+    component: LoginPage
+  },
+
+  {
+    path: '/register',
+    component: RegisterPage
+  },
+
+  {
+    path: '/reset',
+    component: ResetPasswordPage
+  },
+
+  {
+    path: '/tabs',
     component: TabsPage,
     children: [
       {
         path: '',
-        redirect: '/tabs/tab1'
+        redirect: '/tabs/home'
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        path: 'home',
+        component: HomePage
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2Page.vue')
+        path: 'coletados',
+        component: CardsColetados
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
+        path: 'perfil',
+        component: PerfilPessoal
       }
     ]
   }

@@ -1,0 +1,25 @@
+<template>
+
+<ion-page>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+
+    <h2>Karina Meier</h2>
+
+    <p>karina@email.com</p>
+
+    <ion-button color="danger">
+      Sair
+    </ion-button>
+
+  </ion-content>
+
+</ion-page>
+
+</template>
