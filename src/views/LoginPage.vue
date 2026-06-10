@@ -8,7 +8,10 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="ion-padding">
+    <ion-content
+  class="ion-padding"
+  color="light"
+>
 
       <ion-input
         v-model="email"

@@ -8,7 +8,10 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="ion-padding">
+    <ion-content
+  class="ion-padding"
+  color="light"
+>
 
       <h2>Karina Meier</h2>
 

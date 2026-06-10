@@ -7,7 +7,10 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="ion-padding">
+    <ion-content
+  class="ion-padding"
+  color="light"
+>
 
       <StickerCard
         v-for="item in lista"
