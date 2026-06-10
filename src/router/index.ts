@@ -3,12 +3,13 @@ import { createRouter, createWebHistory } from '@ionic/vue-router'
 import LoginPage from '@/views/LoginPage.vue'
 import RegisterPage from '@/views/RegisterPage.vue'
 import ResetPasswordPage from '@/views/ResetPasswordPage.vue'
-
 import TabsPage from '@/views/TabsPage.vue'
-
 import HomePage from '@/views/HomePage.vue'
 import CardsColetados from '@/views/CardsColetados.vue'
 import PerfilPessoal from '@/views/PerfilPessoal.vue'
+import SobrePage from '@/views/SobrePage.vue'
+import TermosPage from '@/views/TermosPage.vue'
+import PrivacidadePage from '@/views/PrivacidadePage.vue'
 
 const routes = [
   {
@@ -29,6 +30,21 @@ const routes = [
   {
     path: '/reset',
     component: ResetPasswordPage
+  },
+
+  {
+    path: '/sobre',
+    component: SobrePage
+  },
+
+  {
+    path: '/termos',
+    component: TermosPage
+  },
+
+  {
+    path: '/privacidade',
+    component: PrivacidadePage
   },
 
   {

@@ -12,14 +12,21 @@
 
       <h2>Karina Meier</h2>
 
-      <p>karina@email.com</p>
+      <p>karina@gmail.com</p>
 
       <ion-button
-        color="danger"
-        @click="sair"
-      >
-        Sair
-      </ion-button>
+      expand="block"
+      router-link="/sobre"
+    >
+      Sobre o Aplicativo
+</ion-button>
+
+<ion-button
+  color="danger"
+  @click="sair"
+>
+  Sair
+</ion-button>
 
     </ion-content>
 
