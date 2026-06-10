@@ -25,11 +25,12 @@
 
       <h3>Termos de Uso</h3>
 
-      <a href="/termos.html" target="_blank">
+      <a href="/termos" target="_blank">
         Termos de Uso
     </a>
 
-        <a href="/privacidade.html" target="_blank">
+    <h3>Política de privacidade</h3>
+        <a href="/privacidade" target="_blank">
       Política de Privacidade
      </a>
 
