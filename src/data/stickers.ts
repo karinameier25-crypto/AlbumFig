@@ -12,35 +12,38 @@ import minamino from '@/assets/minamino.jpg';
 
 export const stickers = [
   {
-    id: 1,
-    nome: 'Neymar',
-    selecao: 'Brasil',
-    numero: 10,
-    posicao: 'Atacante',
-    grupo: 'G',
-    coletada: false,
-    foto: neymar
-  },
-  {
-    id: 2,
-    nome: 'Vini Jr',
-    selecao: 'Brasil',
-    numero: 7,
-    posicao: 'Atacante',
-    grupo: 'G',
-    coletada: false,
-    foto: vini
-  },
-  {
-    id: 3,
-    nome: 'Rodrygo',
-    selecao: 'Brasil',
-    numero: 11,
-    posicao: 'Atacante',
-    grupo: 'G',
-    coletada: false,
-    foto: rodrygo
-  },
+  id: 1,
+  nome: 'Neymar',
+  selecao: 'Brasil',
+  numero: 10,
+  posicao: 'Atacante',
+  grupo: 'G',
+  coletada: false,
+  foto: neymar,
+  raridade: 'Brilhante'
+},
+{
+  id: 2,
+  nome: 'Vini Jr',
+  selecao: 'Brasil',
+  numero: 7,
+  posicao: 'Atacante',
+  grupo: 'G',
+  coletada: false,
+  foto: vini,
+  raridade: 'Rara'
+},
+{
+  id: 3,
+  nome: 'Rodrygo',
+  selecao: 'Brasil',
+  numero: 11,
+  posicao: 'Atacante',
+  grupo: 'G',
+  coletada: false,
+  foto: rodrygo,
+  raridade: 'Comum'
+},
   {
     id: 4,
     nome: 'Marquinhos',
@@ -49,8 +52,9 @@ export const stickers = [
     posicao: 'Zagueiro',
     grupo: 'G',
     coletada: false,
-    foto: marquinhos
-  },
+    foto: marquinhos,
+    raridade: 'Comum'
+},
   {
     id: 5,
     nome: 'Alisson',
@@ -59,8 +63,9 @@ export const stickers = [
     posicao: 'Goleiro',
     grupo: 'G',
     coletada: false,
-    foto: alisson
-  },
+    foto: alisson,
+    raridade: 'Comum'
+},
   {
     id: 6,
     nome: 'Kaoru Mitoma',
@@ -69,8 +74,9 @@ export const stickers = [
     posicao: 'Atacante',
     grupo: 'E',
     coletada: false,
-    foto: mitoma
-  },
+    foto: mitoma,
+   raridade: 'Brilhante'
+},
   {
     id: 7,
     nome: 'Takefusa Kubo',
@@ -79,8 +85,9 @@ export const stickers = [
     posicao: 'Meia',
     grupo: 'E',
     coletada: false,
-    foto: kubo
-  },
+    foto: kubo,
+    raridade: 'Comum'
+},
   {
     id: 8,
     nome: 'Takehiro Tomiyasu',
@@ -89,7 +96,8 @@ export const stickers = [
     posicao: 'Zagueiro',
     grupo: 'E',
     coletada: false,
-    foto: tomiyasu
+    foto: tomiyasu,
+    raridade: 'Comum'
   },
   {
     id: 9,
@@ -99,7 +107,8 @@ export const stickers = [
     posicao: 'Volante',
     grupo: 'E',
     coletada: false,
-    foto: endo
+    foto: endo,
+    raridade: 'Comum'
   },
   {
     id: 10,
@@ -109,6 +118,7 @@ export const stickers = [
     posicao: 'Atacante',
     grupo: 'E',
     coletada: false,
-    foto: minamino
+    foto: minamino,
+    raridade: 'Rara'
   }
 ];

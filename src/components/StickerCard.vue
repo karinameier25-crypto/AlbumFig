@@ -23,6 +23,20 @@
 
       <p>📌 Grupo: {{ figurinha.grupo }}</p>
 
+      <ion-chip
+        :color="
+          figurinha.raridade === 'Brilhante'
+            ? 'warning'
+            : figurinha.raridade === 'Rara'
+            ? 'primary'
+            : 'medium'
+        "
+      >
+        <ion-label>
+          {{ figurinha.raridade }}
+        </ion-label>
+      </ion-chip>
+
       <ion-button
         expand="block"
         @click="$emit('toggle')"
@@ -45,7 +59,9 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCardContent,
-  IonButton
+  IonButton,
+  IonChip,
+  IonLabel
 } from '@ionic/vue';
 
 defineProps<{
@@ -58,6 +74,7 @@ defineProps<{
     grupo: string;
     coletada: boolean;
     foto: string;
+    raridade: string;
   }
 }>();
 
@@ -85,5 +102,10 @@ ion-card-title {
 
 p {
   margin: 6px 0;
+}
+
+ion-chip {
+  margin-top: 8px;
+  margin-bottom: 12px;
 }
 </style>
