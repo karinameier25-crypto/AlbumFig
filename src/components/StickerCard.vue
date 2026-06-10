@@ -91,13 +91,15 @@ defineEmits(['toggle']);
 ion-card {
   max-width: 350px;
   margin: 16px auto;
-  border-radius: 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
 }
 
 ion-card-title {
   text-align: center;
   font-size: 1.3rem;
   font-weight: bold;
+  color: #ff69b4;
 }
 
 p {

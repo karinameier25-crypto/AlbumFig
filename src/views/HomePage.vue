@@ -8,6 +8,7 @@
     </ion-header>
 
     <ion-content
+    
   class="ion-padding"
   color="light"
 >
