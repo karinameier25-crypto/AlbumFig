@@ -3,7 +3,7 @@
   <ion-page>
 
     <ion-header>
-      <ion-toolbar>
+     <ion-toolbar color="primary"> 
         <ion-title>Cadastro</ion-title>
       </ion-toolbar>
     </ion-header>

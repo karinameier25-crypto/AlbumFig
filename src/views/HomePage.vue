@@ -2,7 +2,7 @@
   <ion-page>
 
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar color="primary">
         <ion-title>Álbum da Copa</ion-title>
       </ion-toolbar>
     </ion-header>
