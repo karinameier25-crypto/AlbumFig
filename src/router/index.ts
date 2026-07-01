@@ -1,50 +1,41 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router'
-
-import LoginPage from '@/views/LoginPage.vue'
-import RegisterPage from '@/views/RegisterPage.vue'
-import ResetPasswordPage from '@/views/ResetPasswordPage.vue'
 import TabsPage from '@/views/TabsPage.vue'
-import HomePage from '@/views/HomePage.vue'
-import CardsColetados from '@/views/CardsColetados.vue'
-import PerfilPessoal from '@/views/PerfilPessoal.vue'
-import SobrePage from '@/views/SobrePage.vue'
-import TermosPage from '@/views/TermosPage.vue'
-import PrivacidadePage from '@/views/PrivacidadePage.vue'
+
 
 const routes = [
   {
-    path: '/',
-    redirect: '/login'
+  path: '/',
+  redirect: '/tabs/home'
   },
 
   {
     path: '/login',
-    component: LoginPage
+    component: () => import('@/views/LoginPage.vue')
   },
 
   {
     path: '/register',
-    component: RegisterPage
+      component: () => import('@/views/RegisterPage.vue') 
   },
 
   {
     path: '/reset',
-    component: ResetPasswordPage
+    component: () => import('@/views/ResetPasswordPage.vue')  
   },
 
   {
     path: '/sobre',
-    component: SobrePage
+    component: () => import('@/views/SobrePage.vue')
   },
 
   {
     path: '/termos',
-    component: TermosPage
+    component: () => import('@/views/TermosPage.vue') 
   },
 
   {
     path: '/privacidade',
-    component: PrivacidadePage
+    component: () => import('@/views/PrivacidadePage.vue')  
   },
 
   {
@@ -57,15 +48,15 @@ const routes = [
       },
       {
         path: 'home',
-        component: HomePage
+         component: () => import('@/views/HomePage.vue')
       },
       {
         path: 'coletados',
-        component: CardsColetados
+         component: () => import('@/views/CardsColetados.vue')
       },
       {
         path: 'perfil',
-        component: PerfilPessoal
+        component: () => import('@/views/PerfilPessoal.vue')
       }
     ]
   }
