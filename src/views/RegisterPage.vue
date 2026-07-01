@@ -62,7 +62,7 @@ import {
 
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { useAuth } from '@/composables/useAuth';
+import { addUsuario } from '@/service/database';
 
 const router = useRouter();
 
@@ -70,11 +70,9 @@ const nome = ref('');
 const email = ref('');
 const senha = ref('');
 
-const { cadastrar } = useAuth();
+async function realizarCadastro() {
 
-function realizarCadastro() {
-
-  cadastrar(
+  await addUsuario(
     nome.value,
     email.value,
     senha.value
@@ -83,5 +81,6 @@ function realizarCadastro() {
   alert('Cadastro realizado com sucesso!');
 
   router.push('/login');
+
 }
 </script>

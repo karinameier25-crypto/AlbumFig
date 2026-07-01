@@ -5,7 +5,7 @@ import TabsPage from '@/views/TabsPage.vue'
 const routes = [
   {
   path: '/',
-  redirect: '/tabs/home'
+  redirect: '/login'
   },
 
   {
