@@ -71,27 +71,26 @@ import {
 
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { useAuth } from '@/composables/useAuth';
+import { realizarLogin } from '@/service/database';
 
 const router = useRouter();
 
 const email = ref('');
 const senha = ref('');
 
-const { login } = useAuth();
+async function entrar() {
 
-function entrar() {
-
-  const usuario = login(
+  const usuario = await realizarLogin(
     email.value,
     senha.value
   );
 
-  if (usuario) {
+  if (usuario.length > 0) {
     router.push('/tabs/home');
   } else {
     alert('E-mail ou senha inválidos!');
   }
 
 }
+
 </script>

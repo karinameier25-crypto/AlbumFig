@@ -1,19 +1,39 @@
 import { ref } from "vue";
-import { stickers } from "@/data/stickers";
+import { onMounted } from "vue";
 
-const lista = ref(stickers);
+import {
+  listFigurinhas,
+  updateFigurinha
+} from "@/service/database";
+
+const lista = ref<any[]>([]);
+
+async function carregarFigurinhas() {
+  lista.value = await listFigurinhas();
+}
 
 export function useAlbum() {
 
-  const alternarFigurinha = (id: number) => {
+  onMounted(() => {
+    carregarFigurinhas();
+  });
+
+  const alternarFigurinha = async (id: number) => {
 
     const figurinha = lista.value.find(
       item => item.id === id
     );
 
-    if (figurinha) {
-      figurinha.coletada = !figurinha.coletada;
-    }
+    if (!figurinha) return;
+
+    figurinha.coletada = figurinha.coletada ? 0 : 1;
+
+    await updateFigurinha(
+      figurinha.id,
+      figurinha.coletada
+    );
+
+    await carregarFigurinhas();
   };
 
   return {
