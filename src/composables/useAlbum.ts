@@ -32,6 +32,8 @@ export function useAlbum() {
       figurinha.id,
       figurinha.coletada
     );
+
+    await carregarFigurinhas();
   };
 
   return {

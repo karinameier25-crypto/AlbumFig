@@ -93,12 +93,12 @@ export async function addUsuario(
   login: string,
   senha: string
 ) {
-  await ensureDatabase()
+  await ensureDatabase();
 
   const query =
-    'INSERT INTO usuarios (nome, login, senha) VALUES (?, ?, ?);'
+    "INSERT INTO usuarios (nome, login, senha) VALUES (?, ?, ?);";
 
-  await getDB().run(query, [nome, login, senha])
+  await getDB().run(query, [nome, login, senha]);
 }
 
 export async function updateUsuario(

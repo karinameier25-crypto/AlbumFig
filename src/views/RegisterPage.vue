@@ -71,16 +71,22 @@ const email = ref('');
 const senha = ref('');
 
 async function realizarCadastro() {
+  console.log("Botão clicado!");
 
-  await addUsuario(
-    nome.value,
-    email.value,
-    senha.value
-  );
+  try {
+    await addUsuario(
+      nome.value,
+      email.value,
+      senha.value
+    );
 
-  alert('Cadastro realizado com sucesso!');
+    alert("Cadastro realizado com sucesso!");
 
-  router.push('/login');
+    router.push("/login");
 
+  } catch (error: any) {
+  console.log(error);
+  alert(error?.message || JSON.stringify(error));
+}
 }
 </script>
