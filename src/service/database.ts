@@ -45,6 +45,20 @@ async function ensureDatabase() {
       );
     `)
 
+    await db.execute(`
+      CREATE TABLE IF NOT EXISTS figurinhas (
+      id INTEGER PRIMARY KEY,
+    nome TEXT NOT NULL,
+    selecao TEXT NOT NULL,
+    numero INTEGER NOT NULL,
+    posicao TEXT NOT NULL,
+    grupo TEXT NOT NULL,
+    foto TEXT NOT NULL,
+    raridade TEXT NOT NULL,
+    coletada INTEGER DEFAULT 0
+    );
+  `)
+
     initialized = true
 }
 
@@ -195,4 +209,65 @@ export async function findContatoById(id: number) {
   const result = await getDB().query(query, [id])
 
   return result.values || []
+}
+
+/* ==========================
+   FIGURINHAS
+========================== */
+
+export async function addFigurinha(
+  id: number,
+  nome: string,
+  selecao: string,
+  numero: number,
+  posicao: string,
+  grupo: string,
+  foto: string,
+  raridade: string,
+  coletada: number
+) {
+  await ensureDatabase()
+
+  const query = `
+    INSERT INTO figurinhas
+    (id, nome, selecao, numero, posicao, grupo, foto, raridade, coletada)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+  `
+
+  await getDB().run(query, [
+    id,
+    nome,
+    selecao,
+    numero,
+    posicao,
+    grupo,
+    foto,
+    raridade,
+    coletada
+  ])
+}
+
+export async function listFigurinhas() {
+  await ensureDatabase()
+
+  const result = await getDB().query(
+    'SELECT * FROM figurinhas;'
+  )
+
+  return result.values || []
+}
+
+export async function updateFigurinha(
+  id: number,
+  coletada: number
+) {
+  await ensureDatabase()
+
+  const query =
+    'UPDATE figurinhas SET coletada = ? WHERE id = ?;'
+
+  await getDB().run(query, [
+    coletada,
+    id
+  ])
 }
