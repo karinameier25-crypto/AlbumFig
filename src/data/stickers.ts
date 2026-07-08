@@ -3,7 +3,6 @@ import vini from '@/assets/vini.jpg';
 import rodrygo from '@/assets/rodrygo.jpg';
 import marquinhos from '@/assets/marquinhos.jpg';
 import alisson from '@/assets/alisson.jpg';
-
 import mitoma from '@/assets/mitoma.jpg';
 import kubo from '@/assets/kubo.jpg';
 import tomiyasu from '@/assets/tomiyasu.jpg';

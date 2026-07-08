@@ -4,10 +4,15 @@ import {
   SQLiteDBConnection
 } from '@capacitor-community/sqlite'
 
+import { stickers } from '@/data/stickers'
+
 const dbName = 'appdata'
 
 let db: SQLiteDBConnection | null = null
 let initialized = false
+
+let usuarioLogado: any = null;
+
 
 const sqliteConnection = new SQLiteConnection(CapacitorSQLite)
 
@@ -120,6 +125,10 @@ export async function realizarLogin(
     'SELECT * FROM usuarios WHERE login = ? AND senha = ?;'
 
   const result = await getDB().query(query, [login, senha])
+
+  if (result.values && result.values.length > 0) {
+    usuarioLogado = result.values[0];
+  }
 
   return result.values || []
 }
@@ -257,6 +266,16 @@ export async function listFigurinhas() {
   return result.values || []
 }
 
+export async function countFigurinhas() {
+  await ensureDatabase()
+
+  const result = await getDB().query(
+    'SELECT COUNT(*) as total FROM figurinhas;'
+  )
+
+  return result.values?.[0].total || 0
+}
+
 export async function updateFigurinha(
   id: number,
   coletada: number
@@ -271,3 +290,32 @@ export async function updateFigurinha(
     id
   ])
 }
+
+export function getUsuarioLogado() {
+  return usuarioLogado
+}
+
+export async function popularFigurinhas() {
+  await ensureDatabase()
+
+  const total = await countFigurinhas()
+
+  if (total > 0) {
+    return
+  }
+
+  for (const figurinha of stickers) {
+    await addFigurinha(
+      figurinha.id,
+      figurinha.nome,
+      figurinha.selecao,
+      figurinha.numero,
+      figurinha.posicao,
+      figurinha.grupo,
+      figurinha.foto,
+      figurinha.raridade,
+      figurinha.coletada ? 1 : 0
+    )
+  }
+}
+
